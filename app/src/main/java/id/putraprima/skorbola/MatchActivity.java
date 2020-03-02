@@ -1,6 +1,8 @@
 package id.putraprima.skorbola;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
@@ -42,5 +44,20 @@ public class MatchActivity extends AppCompatActivity {
             Bitmap bmp2 =(Bitmap) extras.get("imageaway");
             imageAway.setImageBitmap(bmp2);
         }
+    }
+
+    public void addhomescore(View view) {
+        Intent intent = new Intent(this, ScorerActivity.class);
+        startActivity(intent);
+    }
+
+    public void addawayscore(View view) {
+        Intent intent = new Intent(this, ScorerActivity.class);
+        startActivity(intent);
+    }
+
+    public void cekhasil(View view) {
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
     }
 }
