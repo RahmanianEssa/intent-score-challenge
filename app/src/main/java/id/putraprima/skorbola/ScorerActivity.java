@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ScorerActivity extends AppCompatActivity {
-public static final String KEY_SCORER = "upin";
+public static final String KEY_SCORER = "add";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

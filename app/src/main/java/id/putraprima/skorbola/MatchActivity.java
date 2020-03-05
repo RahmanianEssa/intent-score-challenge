@@ -69,7 +69,7 @@ public class MatchActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SECOND_ACTIVITY_REQUEST_CODE_HOME) {
             String returnString = data.getStringExtra(ScorerActivity.KEY_SCORER);
-            TextView tvHome = findViewById(R.id.textHome);
+            TextView tvHome = findViewById(R.id.textView4);
             String scorerHome ="";
             scorerHome += "\n"+ returnString;
             tvHome.setText(scorerHome);
@@ -78,7 +78,7 @@ public class MatchActivity extends AppCompatActivity {
         }
         else if(requestCode == SECOND_ACTIVITY_REQUEST_CODE_AWAY){
             String returnString = data.getStringExtra(ScorerActivity.KEY_SCORER);
-            TextView tvAway = findViewById(R.id.textAway);
+            TextView tvAway = findViewById(R.id.textView5);
             String scorerAway ="";
             scorerAway += "\n" + returnString;
             tvAway.setText(scorerAway);

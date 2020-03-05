@@ -24,13 +24,13 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="580dp"
+        android:onClick="handleOk"
         android:text="Oke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        android:onClick="handleOk"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvScorer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
