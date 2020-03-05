@@ -17,12 +17,12 @@ public class MatchActivity extends AppCompatActivity {
     private static final String HASIL_KEY = "hasil";
     private TextView homeText;
     private TextView awayText;
-    private ImageView imageHome;
-    private ImageView imageAway;
-    private TextView scorehome;
-    private TextView scoreaway;
-    int skorHome = 0;
-    int skorAway = 0;
+    private ImageView homeImage;
+    private ImageView awayImage;
+    private TextView score_Home;
+    private TextView score_Away;
+    int scoreHome = 0;
+    int scoreAway = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +31,10 @@ public class MatchActivity extends AppCompatActivity {
 
         homeText = findViewById(R.id.txt_home);
         awayText = findViewById(R.id.txt_away);
-        imageHome = findViewById(R.id.home_logo);
-        imageAway = findViewById(R.id.away_logo);
-        scorehome = findViewById(R.id.score_home);
-        scoreaway = findViewById(R.id.score_away);
-
+        homeImage = findViewById(R.id.home_logo);
+        awayImage = findViewById(R.id.away_logo);
+        score_Home = findViewById(R.id.score_home);
+        score_Away = findViewById(R.id.score_away);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -46,10 +45,10 @@ public class MatchActivity extends AppCompatActivity {
             awayText.setText(away);
 
             Bitmap bmp1=(Bitmap) extras.get("imagehome");
-            imageHome.setImageBitmap(bmp1);
+           homeImage.setImageBitmap(bmp1);
 
             Bitmap bmp2 =(Bitmap) extras.get("imageaway");
-            imageAway.setImageBitmap(bmp2);
+         awayImage.setImageBitmap(bmp2);
         }
     }
 
@@ -68,33 +67,33 @@ public class MatchActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SECOND_ACTIVITY_REQUEST_CODE_HOME) {
-            String returnString = data.getStringExtra(ScorerActivity.KEY_SCORER);
-            TextView tvHome = findViewById(R.id.textView4);
-            String scorerHome ="";
-            scorerHome += "\n"+ returnString;
-            tvHome.setText(scorerHome);
-            skorHome++;
-            scorehome.setText(String.valueOf(scorehome));
+            String returnString = data.getStringExtra("keyName");
+            TextView TVhome = (TextView) findViewById(R.id.textView4);
+            String ScorerHome = "";
+            ScorerHome += " "+returnString;
+            TVhome.setText(""+ScorerHome);
+            scoreHome++;
+            score_Home.setText(""+scoreHome);
         }
         else if(requestCode == SECOND_ACTIVITY_REQUEST_CODE_AWAY){
-            String returnString = data.getStringExtra(ScorerActivity.KEY_SCORER);
-            TextView tvAway = findViewById(R.id.textView5);
-            String scorerAway ="";
-            scorerAway += "\n" + returnString;
-            tvAway.setText(scorerAway);
-            skorAway++;
-            scoreaway.setText(String.valueOf(scoreaway));
+            TextView TVaway = (TextView) findViewById(R.id.textView5);
+            String returnString = data.getStringExtra("keyName");
+            String ScorerAway = "";
+            ScorerAway += " "+returnString;
+            TVaway.setText(""+ScorerAway);
+            scoreAway++;
+            score_Away.setText(""+scoreAway);
         }
     }
 
     public void cekhasil(View view) {
         String hasil = null;
-        if (skorHome==skorAway){
-            hasil="Draw";
-        } else if(skorHome>skorAway){
+        if (scoreHome==scoreAway){
+           hasil = "DRAW";
+        }else if (scoreHome>scoreAway){
             hasil = homeText.getText().toString();
-        } else if (skorAway>skorHome){
-            hasil=awayText.getText().toString();
+        }else if (scoreAway>scoreHome){
+         hasil = awayText.getText().toString();
         }
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(HASIL_KEY, hasil);

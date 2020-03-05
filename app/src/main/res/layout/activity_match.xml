@@ -116,31 +116,37 @@
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="cekhasil"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:text="Home Team"
+        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btn_add_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_home" />
+        app:layout_constraintEnd_toStartOf="@+id/score_home"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toEndOf="@+id/home_logo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_home"
+        app:layout_constraintVertical_bias="0.721" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        android:text="Away Team"
+        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/txt_away"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/score_away"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toEndOf="@+id/away_logo"
         app:layout_constraintTop_toBottomOf="@+id/btn_add_away"
-        app:layout_constraintVertical_bias="0.21"
-        />
+        app:layout_constraintVertical_bias="0.284" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
